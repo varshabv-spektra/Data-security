@@ -1,0 +1,42 @@
+[
+  {
+    "Name": "[Test]: Microsoft Purview Data Security & Compliance",
+    "Language": "English",
+    "BaseURL": "https://github.com/reema0814/Data-security",
+    "Files": [
+       {
+        "RawFilePath": "https://raw.githubusercontent.com/reema0814/Data-security/refs/heads/main/purview-data-security-hackathon-yBdTk-v1/LabGuidePackage/Lab%20Guide/Lab%20Guide/GettingStarted-V2.md",
+        "Order": 1
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/reema0814/Data-security/refs/heads/main/purview-data-security-hackathon-yBdTk-v1/LabGuidePackage/Lab%20Guide/Lab%20Guide/Exercise-01.md",
+        "Order": 2
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/reema0814/Data-security/refs/heads/main/purview-data-security-hackathon-yBdTk-v1/LabGuidePackage/Lab%20Guide/Lab%20Guide/Exercise-02.md",
+        "Order": 3
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/reema0814/Data-security/refs/heads/main/purview-data-security-hackathon-yBdTk-v1/LabGuidePackage/Lab%20Guide/Lab%20Guide/Exercise-03.md",
+        "Order": 4
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/reema0814/Data-security/refs/heads/main/purview-data-security-hackathon-yBdTk-v1/LabGuidePackage/Lab%20Guide/Lab%20Guide/Exercise-04.md",
+        "Order": 5
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/reema0814/Data-security/refs/heads/main/purview-data-security-hackathon-yBdTk-v1/LabGuidePackage/Lab%20Guide/Lab%20Guide/Exercise-05.md",
+        "Order": 6
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/reema0814/Data-security/refs/heads/main/purview-data-security-hackathon-yBdTk-v1/LabGuidePackage/Lab%20Guide/Lab%20Guide/Exercise-06.md",
+        "Order": 7
+      },
+      {
+        "RawFilePath": " https://raw.githubusercontent.com/reema0814/Data-security/refs/heads/main/purview-data-security-hackathon-yBdTk-v1/LabGuidePackage/Lab%20Guide/Lab%20Guide/Exercise-07.md",
+        "Order": 8
+      }
+
+    ]
+  }
+]
