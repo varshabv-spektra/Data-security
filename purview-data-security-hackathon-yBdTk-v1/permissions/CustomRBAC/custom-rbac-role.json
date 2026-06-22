@@ -1,0 +1,32 @@
+{
+  "Name": "purview-data-security-hackathon-Candidate",
+  "Description": "Custom RBAC role for the Purview Data Security Hackathon candidate sandbox",
+  "IsCustom": true,
+  "Actions": [
+    "Microsoft.Resources/subscriptions/resourceGroups/read",
+    "Microsoft.Resources/deployments/*",
+    "Microsoft.Compute/virtualMachines/*",
+    "Microsoft.Compute/disks/*",
+    "Microsoft.Compute/availabilitySets/*",
+    "Microsoft.Network/virtualNetworks/*",
+    "Microsoft.Network/networkInterfaces/*",
+    "Microsoft.Network/publicIPAddresses/*",
+    "Microsoft.Network/networkSecurityGroups/*",
+    "Microsoft.Network/virtualNetworkSubnets/*",
+    "Microsoft.Network/loadBalancers/*",
+    "Microsoft.Storage/storageAccounts/*",
+    "Microsoft.Storage/storageAccounts/blobServices/*",
+    "Microsoft.Storage/storageAccounts/fileServices/*",
+    "Microsoft.ManagedIdentity/userAssignedIdentities/*",
+    "Microsoft.Insights/diagnosticSettings/*",
+    "Microsoft.Resources/tags/*",
+    "Microsoft.Authorization/roleDefinitions/read"
+  ],
+  "NotActions": [
+    "Microsoft.Authorization/*/Write",
+    "Microsoft.Authorization/*/Delete"
+  ],
+  "AssignableScopes": [
+    "/subscriptions/{SUBSCRIPTION_ID}/resourceGroups/rg-candidate-{DEPLOYMENT_ID}"
+  ]
+}
