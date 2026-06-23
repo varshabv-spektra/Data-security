@@ -36,7 +36,7 @@
     }
   },
   "variables": {
-    "scripturl": "https://experienceazure.blob.core.windows.net/templates/purview-data-security-hackathon/psscript-01.ps1",
+    "scripturl": "https://raw.githubusercontent.com/reema0814/Data-security/refs/heads/main/purview-data-security-hackathon-yBdTk-v1/DeploymentPackage/psscript-01.ps1",
     "labVmName": "[concat('labvm-', toLower(parameters('DeploymentID')))]",
     "vnetName": "[concat('vnet-', toLower(parameters('DeploymentID')))]",
     "subnetName": "default",
