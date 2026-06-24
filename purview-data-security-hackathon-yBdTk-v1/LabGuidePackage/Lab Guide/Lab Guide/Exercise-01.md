@@ -24,19 +24,35 @@ In this challenge, you will configure the core Microsoft Purview Information Pro
 In this task, you will sign in to the lab environment and open the Microsoft Purview portal that you will use throughout the challenge.
 
 1. Sign in to the lab VM or browser session with the credentials provided for your environment.
-2. Open Microsoft Edge, browse to <https://portal.azure.com>, and sign in with:
-   - Username: `<inject key="AzureAdUserEmail"></inject>`
-   - Password: `<inject key="AzureAdUserPassword"></inject>`
-3. After Azure sign-in completes, open a new tab and browse to <https://purview.microsoft.com>.
+2. Open Microsoft Edge, browse to
+ `
+ https://portal.azure.com
+ `
+and sign in with:
+   - Username: <inject key="AzureAdUserEmail"></inject>
+
+      ![](media/p1i2.png)
+
+   - Password: <inject key="AzureAdUserPassword"></inject>
+
+      ![](media/p1i3.png)
+3. After Azure sign-in completes, open a new tab and browse to
+   `
+   https://purview.microsoft.com
+   `
 4. If prompted to select a tenant or account, confirm that you are working in the tenant associated with:
-   - Tenant ID: `<inject key="TenantID"></inject>`
-   - Subscription ID: `<inject key="SubscriptionID"></inject>`
+   - Tenant ID: <inject key="TenantID"></inject>
+   - Subscription ID: <inject key="SubscriptionID"></inject>
 5. Record your deployment reference for screenshots and evidence collection as **Deployment ID: <inject key="DeploymentID" enableCopy="false"></inject>**.
 6. In the Microsoft Purview portal, select **Solutions** > **Information Protection**.
+
+   ![](media/p2t1s6.png)
+
 7. Spend a minute reviewing the left navigation so you can identify these areas used later in the challenge:
-   - **Sensitivity labels**
-   - **Publishing policies**
-   - **Policies** > **Auto-labeling policies**
+   - **Sensitivity labels (1)**
+   - **Policies** > **Label publishing policies (2)** > **Auto-labeling policies (3)**
+
+      ![](media/p2t1s7.png)
 
 > [!Tip]
 > Save screenshots in your evidence folder using filenames that include your deployment identifier so they can be correlated later during the investigation and remediation summary.
@@ -45,49 +61,187 @@ In this task, you will sign in to the lab environment and open the Microsoft Pur
 
 In this task, you will create a label taxonomy with four labels and two sublabels under Confidential.
 
-1. In the Microsoft Purview portal, go to **Solutions** > **Information Protection** > **Sensitivity labels**.
+1. In the Microsoft Purview portal, go to **Solutions (1)** > **Information Protection (2)** > **Sensitivity labels (3)**.
+   ![](media/p2t1s6.png)
+
+   ![](media/p2t2s1.png)
+
 2. Select **+ Create a label**.
+
+   ![](media/p2t2s2.png)
+
 3. Create the first label with the following values:
-   - **Name**: `Public`
-   - **Display name**: `Public`
-   - **Description for users**: `Use for information approved for broad internal and external sharing.`
-4. For scope, keep the label available for **Files & other data assets** and **Emails**. Continue through the wizard and leave advanced protection settings off for this label unless your tenant already applies defaults.
-5. Repeat the process to create a second label named `General` with a user description such as `Use for standard business information intended for routine internal use.`
-6. Create a third parent label named `Confidential` with a description such as `Use for sensitive business information that requires controlled access.`
-7. Select the **Confidential** label, open the action menu, and choose **Create sublabel**.
+   - **Name**: `Public (1)`
+   - **Display name**: `Public (2)`
+   - **Description for users**: `Use for information approved for broad internal and external sharing. (3)`
+   - Click **Next (4)**.
+
+      ![](media/p2t2s3.png)
+
+4. For scope, keep the label available for **Files & other data assets (1)** and **Emails (2)**, Click **Next (3)**.
+
+   ![](media/p2t2s4.png)
+
+   Continue through the wizard and leave advanced protection settings off for this label unless your tenant already applies defaults.
+
+5. Review the sensitivity label settings, verify the label details and scope, and then select **Create label** to create the **Public** sensitivity label.
+   ![](media/p2t2s4.0.png)
+
+6. Verify that the sensitivity label was created successfully, then click **Done** to return to the **Sensitivity labels** page.
+
+   ![](media/p2t2s4.1.png)
+
+7. Click **Cancel** to return to the **Sensitivity labels** page.
+
+8. Select **+ Create a label**.
+
+   ![](media/p2t2s5.png)
+5. Create the second label with the following values:
+   
+   - **Name**: `General (1)`
+   - **Display name**: `General (2)`
+   - **Description for users**: `Use for standard business information intended for routine internal use. (3)`
+   - Click **Next (4)**.
+
+      ![](media/p2t2s5.0.png)
+
+6. For scope, keep the label available for **Files & other data assets (1)** and **Emails (2)**, Click **Next (3)**.
+
+   ![](media/p2t2s5.1.png)
+
+7. Review the sensitivity label settings, verify the label details and scope, and then select **Create label** to create the **Public** sensitivity label.
+   ![](media/p2t2s5.2.png)
+
+6. Verify that the sensitivity label was created successfully, then click **Done** to return to the **Sensitivity labels** page.
+
+   ![](media/p2t2s5.3.png)
+
+7. Click **Cancel** to return to the **Sensitivity labels** page.
+
+8. Select **+ Create a label**.
+
+   ![](media/p2t2s6.png)
+
+5. Create the third label with the following values:
+   
+   - **Name**: `Confidential (1)`
+   - **Display name**: `Confidential (2)`
+   - **Description for users**: `Use for sensitive business information that requires controlled access. (3)`
+   - Click **Next (4)**.
+
+      ![](media/p2t2s6.0.png)
+
+6. For scope, keep the label available for **Files & other data assets (1)** and **Emails (2)**, Click **Next (3)**.
+
+   ![](media/p2t2s6.1.png)
+
+7. Review the sensitivity label settings, verify the label details and scope, and then select **Create label** to create the **Public** sensitivity label.
+   ![](media/p2t2s6.2.png)
+
+6. Verify that the sensitivity label was created successfully, then click **Done** to return to the **Sensitivity labels** page.
+
+   ![](media/p2t2s6.3.png)
+
+7. Click **Cancel** to return to the **Sensitivity labels** page.
+
+7. Select the **Confidential (1)** label, and choose **Create sublabel (2)**.
+
+   ![](media/p2t2s7.0.png)
+
 8. Create the first sublabel with values similar to the following:
-   - **Name**: `Finance`
-   - **Display name**: `Confidential \ Finance`
-   - **Description for users**: `Use for sensitive financial and payment-related content.`
+   - **Name**: `Finance (1)`
+   - **Display name**: `Finance (2)`
+   - **Description for users**: `Use for sensitive financial and payment-related content. (3)`
+
+      ![](media/p2t2s8.png)
+
+6. For scope, keep the label available for **Files & other data assets (1)** and **Emails (2)**, Click **Next (3)**.
+
+      ![](media/p2t2s8.0.png)
+
+7. Review the sensitivity label settings, verify the label details and scope, and then select **Create label** to create the **Public** sensitivity label.
+   ![](media/p2t2s8.1.png)
+
+6. Verify that the sensitivity label was created successfully, then click **Done** to return to the **Sensitivity labels** page.
+
+   ![](media/p2t2s8.2.png)
+
+7. Click **Cancel** to return to the **Sensitivity labels** page.
+
+8. Select the **Confidential (1)** label, and choose **Create sublabel (2)**
+
+   ![](media/p2t2s9.png)
+
 9. Create a second sublabel under **Confidential** with values similar to the following:
-   - **Name**: `Legal`
-   - **Display name**: `Confidential \ Legal`
-   - **Description for users**: `Use for contracts, legal advice, and privileged legal content.`
-10. Create a fourth top-level label named `Highly Confidential`.
+   - **Name**: `Legal (1)`
+   - **Display name**: `Legal (2)`
+   - **Description for users**: `Use for contracts, legal advice, and privileged legal content. (3)`
+
+      ![](media/p2t2s9.0.png)
+
+6. For scope, keep the label available for **Files & other data assets (1)** and **Emails (2)**, Click **Next (3)**.
+
+      ![](media/p2t2s9.1.png)
+
+7. Review the sensitivity label settings, verify the label details and scope, and then select **Create label** to create the **Public** sensitivity label.
+   ![](media/p2t2s9.2.png)
+
+6. Verify that the sensitivity label was created successfully, then click **Done** to return to the **Sensitivity labels** page.
+
+   ![](media/p2t2s9.3.png)
+
+7. Click **Cancel** to return to the **Sensitivity labels** page.
+
+8. Select **+ Create a label**.
+
+   ![](media/p2t2s10.png)
+
+10. Create a fourth top-level label
+   
+      - **Name**: `Highly Confidential (1)`
+      - **Display name**: `Highly Confidential (2)`
+      - **Description for users**: `Use for highly sensitive information, including strategic, executive, regulated, or restricted content that requires the highest level of protection. (3)`
+      - Click **Next (4)**.
+
+         ![](media/p2t2s10.0.png)
+
 11. When configuring **Highly Confidential**, make sure the label scope includes **Files & other data assets** and **Emails**.
+
+      ![](media/p2t2s10.1.png)
+
+7. Review the sensitivity label settings, verify the label details and scope, and then select **Create label** to create the **Public** sensitivity label.
+   ![](media/p2t2s10.2.png)
+
+6. Verify that the sensitivity label was created successfully, then click **Done** to return to the **Sensitivity labels** page.
+
+   ![](media/p2t2s10.3.png)
+
+7. Click **Cancel** to return to the **Sensitivity labels** page.
+
 12. Finish the label creation wizard and return to the **Sensitivity labels** page.
+
+      ![](media/p2t2s12.png)
 
 > [!Important]
 > Microsoft Learn guidance notes that sublabels are created from the parent label's action menu rather than as standalone top-level labels. Be sure both Confidential sublabels are nested under the Confidential parent.
 
-## Task 3: Configure protection settings and label priority
+## Task 3: Label Priority
 
 In this task, you will configure the most restrictive label to protect content with encryption and ensure label order reflects increasing sensitivity.
 
-1. On the **Sensitivity labels** page, select **Highly Confidential** and choose **Edit label**.
-2. Move through the wizard until you reach the protection settings for files and emails.
-3. Enable encryption or rights management for the label.
-4. Configure the label so that permissions are assigned to specific users or groups, or to all authenticated users with restricted rights, based on what your facilitator has pre-staged for the tenant.
-5. If the option is available in your tenant, choose permissions that prevent unauthorized forwarding, printing, or copying for highly sensitive content.
-6. Complete the wizard and save the updated label.
-7. Return to the **Sensitivity labels** list and review the label order.
+1. Return to the **Sensitivity labels** list and review the label order.
+
 8. Reorder the labels so that the least restrictive label is at the top and the most restrictive label is at the bottom. A recommended final order is:
    - `Public`
    - `General`
    - `Confidential`
    - `Highly Confidential`
-9. Confirm that the `Confidential \ Finance` and `Confidential \ Legal` sublabels remain grouped under the parent label.
-10. Capture a screenshot showing the final taxonomy and priority order.
+
+      ![](media/p2t3s7.png)
+
+9. Confirm that the `Confidential / Finance` and `Confidential / Legal` sublabels remain grouped under the parent label.
+
+   ![](media/p2t3s8.png)
 
 > [!Note]
 > Microsoft Learn states that label priority matters. In the Purview list, the most restrictive label should appear lower in the list, while less restrictive labels should appear higher.
@@ -98,22 +252,45 @@ In this task, you will configure the most restrictive label to protect content w
 
 In this task, you will publish the labels through a label policy so users and services can consume them.
 
-1. In **Information Protection**, open **Publishing policies**.
-2. Select **Publish label**.
-3. For the policy name, enter `Challenge 1 Label Policy`.
-4. When prompted to choose labels to publish, include all of the labels created in this challenge:
+1. In **Information Protection (1)**, open **Label publishing policies (2)** from the drop-down menu of **Policies**.
+
+   ![](media/p2t4s1.png)
+
+2. Select **Choose sensitivity labels to publish (1)**.
+
+4. When prompted to choose labels to publish, include all of the labels created in this challenge and click **Add (3)**.
    - `Public`
    - `General`
    - `Confidential`
-   - `Confidential \ Finance`
-   - `Confidential \ Legal`
+   - `Confidential / Finance`
+   - `Confidential / Legal`
    - `Highly Confidential`
-5. If your tenant uses groups for scoped rollout, assign the policy to the pre-staged learner or pilot users/group provided by your facilitator. Otherwise, keep the broader scope required for the lab.
+
+   ![](media/p2t4s3.png)
+
+1. Review the list of sensitivity labels to be published, verify that **Public**, **General**, **Confidential**, **Confidential/Finance**, **Confidential/Legal**, and **Highly Confidential** are included, and then click **Next**.
+
+   ![](media/p2t4s3.0.png)
+
 6. Continue through the policy settings and review any relevant options for default labeling, mandatory labeling, or policy tips if they are already enabled in the tenant design.
-7. Complete the wizard to publish the policy.
+
+3. In the **Name** field, enter **Challenge 1 Label Policy (1)**, and then click **Next (2)**.
+
+   ![](media/p2t4s5.png)
+
+2. Review the policy configuration, verify that all required sensitivity labels are listed and the policy name is **Challenge 1 Label Policy**, and then click **Submit** to create the publishing policy.
+
+   ![](media/p2t4s5.0.png)
+
+3. Verify that the publishing policy was created successfully, review the confirmation message, and then click **Done** to return to the **Publishing policies** page.
+
+   ![](media/p2t4s5.1.png)
+
 8. Return to the **Label policies** page and verify that `Challenge 1 Label Policy` appears in the list.
+
+   ![](media/p2t4s7.png)
+
 9. Open the policy and review that the selected labels are included.
-10. Capture a screenshot of the published policy details for your evidence folder.
 
 > [!Tip]
 > Publishing a label policy makes the labels available to assigned users and services. It can take time for policy replication to complete across Microsoft 365 workloads.
@@ -123,13 +300,60 @@ In this task, you will publish the labels through a label policy so users and se
 In this task, you will create an auto-labeling policy that applies a sensitivity label when sensitive information is detected.
 
 1. In the Microsoft Purview portal, go to **Solutions** > **Information Protection** > **Policies** > **Auto-labeling policies**.
+
+   ![](media/p2t5s1.png)
+
 2. Select **+ Create auto-labeling policy**.
-3. Choose the option to **apply a sensitivity label**.
-4. Name the policy `Challenge 1 Financial Auto-Label`.
-5. Select the target label that best matches sensitive financial content, such as `Confidential \ Finance`.
-6. Keep **Full directory** selected unless your tenant requires administrative unit scoping.
-7. For locations, include at least **SharePoint sites** and **OneDrive accounts**. If Exchange is available and pre-staged for this challenge, you may include it as well.
-8. Add a condition based on a built-in sensitive info type aligned to financial data, such as credit card information, bank account information, or another finance-related sensitive info type available in the tenant.
+
+   ![](media/p2t5s2.png)
+
+3. Choose the option to **Automatically apply labels only**.
+
+   ![](media/p2t5s3.png)
+
+4. Name the policy `Challenge 1 Financial Auto-Label (1)` and click **Next (2)**.
+
+   ![](media/p2t5s3.0.png)
+
+5. Click **Choose a label (1)**, select **Confidential/Finance (2)** from the list of available sensitivity labels, and then click **Add (3)**.
+
+   ![](media/p2t5s3.1.png)
+
+2. Verify that **Confidential/Finance** appears as the selected label to auto-apply, and then click **Next**.
+
+   ![](media/p2t5s3.2.png)
+
+3. For locations, include at least **SharePoint sites (1)** and **OneDrive accounts (2)**. If Exchange is available and pre-staged for this challenge, you may include it as well.Then click **Next (3)**.
+
+   ![](media/p2t5s3.3.png)
+
+4. In the **Name (1)** field, enter **Financial Data Detection**, click **Add condition (2)**, and then select **Content contains (3)** to create a condition that detects sensitive financial information
+
+   ![](media/p2t5s3.4.png)
+
+5. Under **Content contains**, click **Add (1)** and select **Sensitive info types (2)** to configure the rule to detect sensitive financial information.
+
+   ![](media/p2t5s3.5.png)
+
+
+6. In the **Sensitive info types** pane, select **Credit Card Number (1)**, and then click **Add (2)**.
+
+   ![](media/p2t5s3.6.png)
+
+   > **Note:** If additional financial sensitive information types such as **Bank Account Number** or **Credit Card Information** are not available in your tenant, select **Credit Card Number** and continue with the lab.
+
+7. Review the configured condition to confirm that **Credit Card Number** has been added as the sensitive information type, and then click **Save** to create the rule.
+
+   ![](media/p2t5s3.7.png)
+
+8. Review the **Financial Data Detection** rule and verify that **Credit Card Number** is listed as the sensitive information type. Ensure the rule is enabled, and then click **Next** to continue to the policy configuration settings.
+
+   ![](media/p2t5s3.8.png)
+
+9. Review the auto-labeling policy settings, verify that **Confidential/Finance** is selected as the label, **Credit Card Number** is configured as the sensitive information type, and **Simulation** mode is enabled. Then click **Create policy**.
+
+   ![](media/p2t5s3.9.png)
+
 9. If simulation mode is offered, leave the policy in simulation first so you can review expected matches before full enforcement.
 10. Complete the wizard and save the policy.
 11. After the policy is created, open it and review the scope, selected label, and rule conditions.
