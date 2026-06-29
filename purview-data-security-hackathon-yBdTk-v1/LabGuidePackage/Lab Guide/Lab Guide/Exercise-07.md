@@ -179,6 +179,10 @@ In this task, you will ask Copilot to create a KQL query that can support follow
    Generate a KQL query I can use to investigate related risky user activity for this incident. Include a brief explanation of what each filter is doing and focus on audit or data security events tied to the user and timeframe in this case.
    ```
 
+   ![](media/p8t4s1.png)
+
+   ![](media/p8t4s1.0.png)
+
 2. Review the generated query carefully before using it.
 3. Confirm whether the query references realistic tables, fields, users, and timestamps for your environment.
 4. If your facilitator has provided access to a supported hunting or log experience, copy the query into that workspace and run it.
@@ -191,6 +195,12 @@ In this task, you will ask Copilot to create a KQL query that can support follow
    ```text
    Adjust the KQL query so it is easier for an analyst to modify for another user or date range, and explain any assumptions you made.
    ```
+
+   ![](media/p8t4s1.1.png)
+
+   ![](media/p8t4s1.2.png)
+
+   ![](media/p8t4s1.3.png)
 
 7. Save the generated query and your review comments into the evidence folder.
 

@@ -88,11 +88,27 @@ https://portal.azure.com
 
 In this task, you will review AI-related recommendations and identify one action the team can take to reduce exposure.
 
-1. While still in **DSPM**, review either the **Objectives** page or the **Recommendations** area that appears in your tenant.
-2. Look for recommendations related to AI protection, oversharing, or sensitive-data exposure.
-3. If available, open **AI observability** and review which apps, agents, or AI-enabled experiences are listed.
-4. Open **Discover** > **Activity explorer** if it is available in your tenant.
-5. Review any AI-related activities, sensitive info indicators, or related protection coverage that appear.
+1. In the Microsoft Purview portal, click **Solutions (1)** from the left navigation pane to open the list of available solutions, select **DSPM (2)** to open **Data Security Posture Management** and review security posture insights, protection objectives, and data risk recommendations for the organization.
+
+   ![](media/p5t2s1.png)
+
+1. In **DSPM**, select **Objectives** from the left navigation pane to review the organization's data security objectives, Review the visible objectives and identify the available data protection goals, including **Prevent data exposure in Microsoft 365 Copilot and Microsoft Copilot interactions** and **Prevent oversharing of sensitive data**.
+
+1. Review the objective details, including the current interaction statistics, risk indicators, and available remediation actions such as **View remediation plan** and **View objective**.
+
+   ![](media/p5t2s1.0.png)
+
+1. In **DSPM**, select **AI observability (1)** from the left navigation pane to review AI applications, agents, and related risk insights across the organization, Verify that the **All apps & agents (2)** tab is selected to display the complete inventory of discovered AI applications and agents, 
+Review the available AI applications and agents listed in the inventory, including their **Status**, **Agent ID**, **Risk level**, **Risk types**, and **Sensitive activity trend (3)** information.
+
+   ![](media/p5t2s1.1.png)
+
+1. In **DSPM**, expand **Discover (1)** and select **Activity explorer (2)** to review activities related to sensitive information, sensitivity labels, and data protection events.
+
+1. Review the available filters, including **Creation Time**, **Activity**, **Workload**, **Sensitive Info Types**, and **Sensitivity Labels**, which can be used to investigate data security activities
+
+   ![](media/p5t2s1.2.png)
+
 6. Open **Discover** > **Data risk assessments** if the tenant has results available.
 7. Review the default or custom assessment summary and identify at least one potential oversharing concern, such as:
    - Sensitive items without labels
