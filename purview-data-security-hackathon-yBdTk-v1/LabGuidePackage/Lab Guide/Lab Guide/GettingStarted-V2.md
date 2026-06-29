@@ -59,13 +59,13 @@ flowchart LR
 ## Getting Started with Lab
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
 
-![Image](../images/GettingStarted-00.png)
+   ![](media/g.png)
 
 ## Lab Guide Zoom In/Zoom Out
 
 To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
 
-![Image](../images/GettingStarted-01.png)
+   ![](media/gi.png)
 
 ## Virtual Machine & Lab Guide
 Your virtual machine is your workhorse throughout the workshop. The guide is your roadmap to success.
@@ -73,25 +73,42 @@ Your virtual machine is your workhorse throughout the workshop. The guide is you
 ## Exploring Your Lab Resources
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
 
-![Image](../images/gs1.1.png)
+![](media/gs1.1.png)
 
 ## Utilizing the Split Window Feature
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the top right corner.
 
-![Image](../images/gs1.2.png)
+![](media/gs1.2.png)
 
 ## Managing Your Virtual Machine
 Feel free to **start, restart, or stop (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
 
-![Image](../images/GettingStarted-04.png)
+   ![](media/gr.png)
 
 ## Sign-in and Lab Access
 
-1. Sign in to the lab VM if directed by your facilitator.
-2. Open a browser and go to <https://portal.azure.com>.
-3. Sign in with the following credentials:
+1. On your virtual machine, click on the **Azure Portal** icon.
+
+    ![](media/p1i1.png)
+2. Open a browser and go to 
+`
+https://portal.azure.com
+`
+3. On the **Sign in to Microsoft Azure** tab you will see the login screen, in that enter the following email/username, and click on **Next (2)**.
    - Username: <inject key="AzureAdUserEmail"></inject>
+
+      ![](media/p1i2.png)
+
    - Password: <inject key="AzureAdUserPassword"></inject>
+
+      ![](media/p1i3.png)
+
+1. If you see the pop-up **Stay Signed in?**, select **No**.
+
+   ![](media/p1i4.png)
+
+1. If a **Welcome to Microsoft Azure** popup window appears, select **Maybe Later** to skip the tour.
+
 4. Confirm that your Azure subscription is available:
    - Subscription: <inject key="SubscriptionID"></inject>
    - Tenant: <inject key="TenantID"></inject>
@@ -100,6 +117,9 @@ Feel free to **start, restart, or stop (2)** your virtual machine as needed from
 https://purview.microsoft.com
 `
 6. If a welcome screen appears, select **Get started** to enter the unified Microsoft Purview portal home page.
+
+   ![](media/p1i6.png)
+   
 7. Record your deployment reference for screenshots, evidence notes, and any facilitator check-ins: **Deployment ID: <inject key="DeploymentID" enableCopy="false"></inject>**
 
 > [!Tip]
@@ -190,7 +210,10 @@ Consolidate findings into a final incident and remediation narrative. Where enab
 
 Microsoft Learn states that the unified Microsoft Purview portal provides a single home page, solution cards, centralized settings, and solution-specific left navigation. As you work through the challenges, use this pattern:
 
-1. Start at <https://purview.microsoft.com>.
+1. Start at 
+`
+https://purview.microsoft.com
+`
 2. From the home page, open a solution card directly, or select **View all solutions**.
 3. Use the **Data Security**, **Risk & Compliance**, or **Data Governance** areas to locate the service needed for the current challenge.
 4. After opening a solution, use the left navigation to move between its **Home**, policies, reports, explorers, settings, and related pages.

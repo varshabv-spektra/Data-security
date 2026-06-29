@@ -23,24 +23,44 @@ In this challenge, you will work in Microsoft Purview to review Insider Risk Man
 In this task, you will sign in to the lab environment, open Microsoft Purview, and verify that the Insider Risk Management solution is available and ready for investigation work.
 
 1. On the lab VM, open Microsoft Edge.
-2. Go to <https://portal.azure.com> and sign in with the following credentials:
-   - Username: `<inject key="AzureAdUserEmail"></inject>`
-   - Password: `<inject key="AzureAdUserPassword"></inject>`
-3. Confirm that your lab deployment identifier is **<inject key="DeploymentID" enableCopy="false"></inject>**. Record this value in your notes so you can tag screenshots and exported evidence consistently.
-4. In a new browser tab, go to <https://purview.microsoft.com>.
-5. If prompted, sign in again by using:
-   - Username: `<inject key="AzureAdUserEmail"></inject>`
-   - Password: `<inject key="AzureAdUserPassword"></inject>`
-6. In the Microsoft Purview portal, select **Solutions** and open **Insider Risk Management**.
+2. Browse to the Microsoft Purview portal at 
+`
+https://purview.microsoft.com
+`
+3. Sign in with the following credentials:
+   - Username: <inject key="AzureAdUserEmail"></inject>
+
+      ![](media/p1i2.png)
+
+   - Password: <inject key="AzureAdUserPassword"></inject>
+
+      ![](media/p1i3.png)
+
+4. When prompted, complete any first-run or multifactor prompts that are already pre-staged for the lab tenant.
+5. In a separate browser tab, open the Azure portal at 
+`
+https://portal.azure.com
+`
+ and confirm that your subscription context is available for this deployment:
+   - Subscription: <inject key="SubscriptionID"></inject>
+   - Tenant: <inject key="TenantID"></inject>
+
+6. In the Microsoft Purview portal, select **Solutions (1)** and open **Insider Risk Management (2)**.
+
+   ![](media/p4t1s6.png)
+
 7. Review the landing experience and confirm the following areas are available in the left navigation:
-   - **Policies**
-   - **Alerts**
-   - **Cases**
-   - **Notification templates**
-   - **Reports**
+   - **Policies (1)**
+   - **Reports (2)**
+   - **Reports > Alerts (3)**
+   - **Reports > Cases (4)**
+
+      ![](media/p4t1s7.png)
+      
 8. If your tenant presents setup banners, recommendations, or prerequisite notices instead of a fully active dashboard, document them in your challenge notes. For this hackathon, some readiness items may be pre-staged by the facilitator.
-9. Open **Policies** and review whether at least one existing policy already appears.
-10. Open **Alerts** and review whether one or more alerts are already present for triage.
+9. Open **Policies** and review whether any existing Insider Risk Management policies are present. If no policies exist, continue to Task 2 and create a new policy.
+
+10. Open **Alerts** and review whether any alerts are available for triage. If no alerts are present, document that no pre-staged alerts were available in the tenant and continue with the challenge.
 
 > [!Important]
 > Insider Risk Management depends on tenant-side prerequisites such as roles, indicators, privacy settings, and signal sources. If a specific alert or policy is pre-staged in your environment, use it rather than waiting for new telemetry to propagate.
@@ -53,23 +73,71 @@ In this task, you will sign in to the lab environment, open Microsoft Purview, a
 In this task, you will validate an existing exfiltration-focused policy or create one that can detect data leak behavior.
 
 1. In **Insider Risk Management**, select **Policies**.
-2. Review the existing policy list for a policy related to data leaks, exfiltration, or risky sharing.
-3. If a suitable policy already exists, open it and review the configuration, including:
-   - Policy template or quick policy type
-   - Included users or groups
-   - Triggering event
-   - Selected indicators
-   - Priority content or sensitivity-based conditions, if configured
-4. If no suitable policy exists, select **Create policy**.
-5. In the policy wizard, choose a policy type aligned to data leak detection, such as a **Data leaks** or similar exfiltration-focused template if available in your tenant.
-6. Enter a policy name such as `Titan Journey Exfiltration Review`.
-7. Add a short description that explains the policy is intended to detect risky data exfiltration or oversharing behavior for the hackathon scenario.
-8. Scope the policy to the seeded test users or groups provided in the tenant.
-9. When you reach the indicator configuration area, enable exfiltration-relevant indicators made available in the tenant, such as sharing, downloads, external transfers, or other leak-related signals.
-10. If the policy supports priority content, select available sensitivity labels, sensitive information types, or high-value SharePoint sites that align to the scenario.
-11. Review the policy summary and create the policy.
-12. After the policy is saved, return to the **Policies** dashboard and verify that the policy status is healthy or at least available for review.
-13. Record the policy name and any observed warnings or recommendations in your notes.
+
+1. On the **Policies** page, click **Create policy (1)**, From the dropdown menu, select **Custom policy (2)** to create a new Insider Risk Management policy from scratch.
+
+   ![](media/p4t2s4.png)
+
+1. On the **Choose a policy template** page, select **Data leaks (1)** and then choose the **Data leaks (2)** template, Review the template details and prerequisites, and then click **Next (3)** to continue
+
+   ![](media/p4t2s4.0.png)
+
+1. On the **Name your policy** page, enter **Titan Journey Exfiltration Review (1)** as the policy name, In the **Description (2)** field, enter a description such as: **Detects risky data exfiltration and oversharing behavior for the Titan Journey hackathon scenario.**, Click **Next (3)** to continue to the **Users and groups** configuration page.
+
+   ![](media/p4t2s4.1.png)
+
+1. On the **Choose users, groups, & adaptive scopes** page, ensure **All users, groups, and adaptive scopes (1)** is selected so that the policy applies across the organization, Click **Next (2)** to continue to the **Content to prioritize** page.
+
+   ![](media/p4t2s4.2.png)
+
+1. On the **Decide whether to prioritize content** page, select **I want to prioritize content (1)**, and ensure the available content types remain selected, Click **Next (2)** to continue to the **Triggering event** configuration page.
+
+   ![](media/p4t2s4.3.png)
+
+1. On the **Trainable classifiers to prioritize** page, click **+ Add or edit trainable classifiers (1)**, In the **Add or edit trainable classifiers** pane, select **Finance (2)**,  Click **Add (3)** to add the selected trainable classifier to the policy.
+
+   ![](media/p4t2s4.4.png)
+
+1. Review the selected **Finance** trainable classifier to confirm it has been added to the policy, Click **Next** to continue to the **Scoring** configuration page.
+
+   ![](media/p4t2s4.5.png)
+
+1. On the **Choose triggering event for this policy** page, select **User matches a data loss prevention (DLP) policy (1)** as the triggering event, From the list of available DLP policies, select **Hackathon - Financial DLP (2)**, Click **Next (3)** to continue to the **Indicators** configuration page.
+
+   ![](media/p4t2s4.6.png)
+
+1. On the **Indicators** page, note the warning that the required indicators are currently turned off for the organization, Click **Turn on indicators** to enable the indicators required for the Insider Risk Management policy.
+
+   ![](media/p4t2s4.7.png)
+
+1. In the **Turn on indicators for your organization** pane, click **Choose indicators to turn on** to review and select the indicators required for the policy.
+
+   ![](media/p4t2s4.8.png)
+
+1. In the **Choose indicators to turn on** pane, review the available indicator categories and confirm the required indicators are selected, Click **Save** to enable the selected indicators for Insider Risk Management.
+
+   ![](media/p4t2s4.9.png)
+
+   > **Note:** The indicators may take some time to become available after they are enabled. If the indicators are not immediately available, wait for the configuration to complete and then return to the policy wizard.
+
+1. On the **Indicators** page, review the selected indicators and confirm that the required indicator categories are now enabled for the policy, Click **Next** to continue to the **Finish** page.
+
+   ![](media/p4t2s4.10.png)
+
+1. On the **Review settings and finish** page, review the policy configuration, including the policy name, content priorities, triggering event, and selected policy indicators.
+
+1. Confirm that the **Hackathon - Financial DLP** policy is configured as the triggering event and that the **Finance** trainable classifier is selected for content prioritization, Click **Submit** to create and activate the Insider Risk Management policy.
+
+   ![](media/p4t2s4.11.png)
+
+1. Verify that the **Your policy was created** confirmation message is displayed, indicating that the Insider Risk Management policy was successfully created, Click **Done** to close the wizard and return to the **Insider Risk Management** dashboard.
+
+   ![](media/p4t2s4.12.png)
+
+1. Verify that the **Titan Journey Exfiltration Review** policy is listed on the **Policies** page, Confirm that the policy status is displayed as **Healthy**, indicating that the Insider Risk Management policy was created successfully and is active.
+
+
+   ![](media/p4t2s4.13.png)
 
 > [!Note]
 > Microsoft Learn documents that Insider Risk Management policies require selected indicators and that policy health warnings can appear when indicators, triggers, devices, or related dependencies are incomplete. In the hackathon tenant, use what is already prepared rather than trying to remediate every backend dependency.

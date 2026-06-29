@@ -44,7 +44,7 @@ and sign in with:
    - Tenant ID: <inject key="TenantID"></inject>
    - Subscription ID: <inject key="SubscriptionID"></inject>
 5. Record your deployment reference for screenshots and evidence collection as **Deployment ID: <inject key="DeploymentID" enableCopy="false"></inject>**.
-6. In the Microsoft Purview portal, select **Solutions** > **Information Protection**.
+6. In the Microsoft Purview portal, select **Solutions (1)** > **Information Protection (2)**.
 
    ![](media/p2t1s6.png)
 
@@ -256,6 +256,10 @@ In this task, you will publish the labels through a label policy so users and se
 
    ![](media/p2t4s1.png)
 
+1. Select **Publish label**.
+
+   ![](media/p2t4s2.png)
+
 2. Select **Choose sensitivity labels to publish (1)**.
 
 4. When prompted to choose labels to publish, include all of the labels created in this challenge and click **Add (3)**.
@@ -323,7 +327,7 @@ In this task, you will create an auto-labeling policy that applies a sensitivity
 
    ![](media/p2t5s3.2.png)
 
-3. For locations, include at least **SharePoint sites (1)** and **OneDrive accounts (2)**. If Exchange is available and pre-staged for this challenge, you may include it as well.Then click **Next (3)**.
+3. For locations, include at least **SharePoint sites (2)** and **OneDrive accounts (3)**. If **Exchange mail (1)** is available and pre-staged for this challenge, you may include it as well.Then click **Next (4)**.
 
    ![](media/p2t5s3.3.png)
 
@@ -354,11 +358,6 @@ In this task, you will create an auto-labeling policy that applies a sensitivity
 
    ![](media/p2t5s3.9.png)
 
-9. If simulation mode is offered, leave the policy in simulation first so you can review expected matches before full enforcement.
-10. Complete the wizard and save the policy.
-11. After the policy is created, open it and review the scope, selected label, and rule conditions.
-12. If simulation results or activity summaries are already available in the tenant, review them and note the expected labeled locations.
-
 > [!Important]
 > Microsoft Learn recommends simulation mode for auto-labeling policies so you can validate likely results before enforcing labeling broadly across SharePoint, OneDrive, and Exchange.
 
@@ -366,18 +365,32 @@ In this task, you will create an auto-labeling policy that applies a sensitivity
 
 In this task, you will verify that sensitivity labels are usable with SharePoint and OneDrive and review available analytics or activity evidence.
 
-1. In the Microsoft Purview portal, return to **Information Protection** and review the published labels and policies.
-2. Confirm with your facilitator notes or pre-staged tenant settings that sensitivity labels are enabled for use with SharePoint and OneDrive files.
-3. If your tenant includes the relevant setting workflow, review the configuration that enables sensitivity labels for Office files in SharePoint and OneDrive.
-4. Open any available activity, analytics, or policy reporting experience tied to Information Protection in the portal.
-5. Review whether you can see evidence such as:
-   - Recently created labels
-   - Published label policy status
-   - Auto-labeling simulation output
-   - Label-related activity or analytics
-6. If sample files are pre-staged in SharePoint or OneDrive for this challenge, inspect one example location and verify whether sensitivity labeling is available or already applied.
-7. Capture at least one screenshot that demonstrates either label availability, policy presence, or analytics/activity evidence.
-8. Save your screenshots and notes for use in later challenges, where you will compare protection design with detection and investigation outcomes.
+1. In the Microsoft Purview portal, select **Information Protection (1)** from the left navigation pane, select **Sensitivity labels (2)** to view the available sensitivity labels configured in the tenant.
+
+1. Review the available sensitivity labels, including **Public**, **General**, **Confidential**, and **Highly Confidential (3)**, and verify that they are available for classifying and protecting organizational data.
+
+
+   ![](media/p2t6s1.0.png)
+
+1. In **Information Protection**, expand **Policies (1)** and select **Label publishing policies (2)** to review the sensitivity label publishing policies configured in the tenant, Review the list of available publishing policies and verify that **Challenge 1 Label Policy (3)** is present.
+
+   ![](media/p2t6s1.1.png)
+
+1. In **Information Protection**, select **Sensitivity labels (1)** to review the available labels configured in the tenant, Select the **Personal (2)** sensitivity label to open and review its configuration details.
+
+1. In the details pane, verify that the **Scope** includes **Files & other data assets, Email, Meetings**, confirming that the label can be applied across multiple Microsoft 365 content types.
+
+   ![](media/p2t6s1.2.png)
+
+1. In **Information Protection**, expand **Explorers (1)** and select **Activity explorer (2)** to review activities related to sensitivity labels, DLP events, and protected content, Review the **Activity explorer** page and note the message indicating that auditing must be enabled before activity data can be collected and displayed.
+
+   ![](media/p2t6s1.3.png)
+
+1. In **Information Protection**, expand **Policies (1)** and select **Auto-labeling policies (2)** to review the automatically applied sensitivity labeling policies configured in the tenant, Review the list of available auto-labeling policies and verify that **Challenge 1 Financial Auto-Label (3)** is present.
+
+   ![](media/p2t6s1.4.png)
+
+1. Confirm that the policy is configured in **Simulation** mode and is configured to apply the **Confidential/Finance** sensitivity label across **Exchange**, **SharePoint**, and **OneDrive** locations.
 
 > [!Note]
 > In some tenants, propagation delays or licensing constraints can limit what appears immediately in analytics. If live evidence is delayed, document the completed configuration and use screenshots of the label and policy settings as your proof of implementation.

@@ -22,25 +22,86 @@ In this challenge, you will open Microsoft Security Copilot, confirm that the Mi
 
 In this task, you will sign in to the required portals and confirm that Security Copilot can use Microsoft Purview data.
 
-1. On the lab VM, open Microsoft Edge and sign in to the [Microsoft Purview portal](https://purview.microsoft.com) using the following credentials:
-   - Username: `<inject key="AzureAdUserEmail"></inject>`
-   - Password: `<inject key="AzureAdUserPassword"></inject>`
-2. Keep the Purview browser tab open for reference.
-3. Open a new browser tab and go to [Microsoft Security Copilot](https://securitycopilot.microsoft.com/).
-4. If prompted, sign in again with:
-   - Username: `<inject key="AzureAdUserEmail"></inject>`
-   - Password: `<inject key="AzureAdUserPassword"></inject>`
-5. In the prompt bar, select **Sources**.
-6. In the plugin list, confirm that **Purview** is enabled.
-7. If the plugin is disabled, enable it, then close the **Sources** pane.
-8. In a text file on the lab VM, record that you are working in deployment **<inject key="DeploymentID" enableCopy="false"></inject>** and note the date/time of your validation.
-9. In the Security Copilot prompt bar, enter the following prompt and review the available Purview capabilities:
+1. On the lab VM, open Microsoft Edge.
+2. Browse to the Microsoft Purview portal at 
+`
+https://purview.microsoft.com
+`
+3. Sign in with the following credentials:
+   - Username: <inject key="AzureAdUserEmail"></inject>
 
-   ```text
+      ![](media/p1i2.png)
+
+   - Password: <inject key="AzureAdUserPassword"></inject>
+
+      ![](media/p1i3.png)
+
+4. When prompted, complete any first-run or multifactor prompts that are already pre-staged for the lab tenant.
+5. In a separate browser tab, open the Azure portal at 
+`
+https://portal.azure.com
+`
+ and confirm that your subscription context is available for this deployment:
+   - Subscription: <inject key="SubscriptionID"></inject>
+   - Tenant: <inject key="TenantID"></inject>
+   
+3. Open a new browser tab and go to [Microsoft Security Copilot](https://securitycopilot.microsoft.com/).
+
+4. If prompted, sign in again with:
+   - Username: <inject key="AzureAdUserEmail"></inject>
+   - Password: <inject key="AzureAdUserPassword"></inject>
+
+1. On the **Workspace info** page, in the **Workspace name (1)** field, enter **Hackathon-Workspace <inject key="DeploymentID" enableCopy="false"></inject>** as the workspace name, Verify that **United States (2)** is selected as the **Data storage location**, Click **Continue (3)** to proceed with the Microsoft Security Copilot workspace setup.
+
+   ![](media/p8t1s3.0.png)
+
+1. On the **Microsoft Security Copilot** welcome page, review the introduction and verify that the workspace setup page is displayed, Click **Get started** to begin setting up the Microsoft Security Copilot workspace and continue with the initial configuration process.
+
+   ![](media/p8t1s3.1.png)
+
+1. Verify that the **Azure Subscription (1)** and **Resource group (2)** fields are populated with the provided lab resources, In the **Capacity name (3)** field, enter **Hackathon-Workspace <inject key="DeploymentID" enableCopy="false"></inject>-Capacity**.
+
+1. Verify that **Australia (4)** is selected as the **Prompt evaluation location**, Verify that **Australia East (5)** is selected as the **Capacity region**.
+
+   ![](media/p8t1s3.2.png)
+
+1. Review the **Setting up your security capacity** page and verify that the Microsoft Security Copilot capacity provisioning process has started successfully, Confirm that the message **"Setting up your security capacity..."** is displayed, indicating that the workspace and capacity configuration is in progress.
+
+   ![](media/p8t1s3.3.png)
+
+1. On the **Help improve Copilot** page, review the data sharing and privacy options for Microsoft Security Copilot, Leave the default settings enabled for the available data collection options, unless otherwise instructed by your organization.
+
+1. Click **Continue** to accept the current settings and proceed with the Microsoft Security Copilot setup.
+
+   ![](media/p8t1s3.4.png)
+
+1. On the **Copilot's access and storage of Microsoft 365 service data** page, review the information about how Microsoft Security Copilot accesses, processes, and stores Microsoft 365 service data, Click **Continue** to proceed with the Microsoft Security Copilot setup and enable access to Microsoft 365 service data.
+
+   ![](media/p8t1s3.5.png)
+
+1. On the **Logging audit data in Microsoft Purview** page, review the information explaining how Microsoft Purview stores and processes Microsoft Security Copilot audit logs, Click **Continue** to proceed with the Microsoft Security Copilot setup and complete the Microsoft Purview audit logging configuration.
+
+   ![](media/p8t1s3.6.png)
+
+1. In the **Contributors** section, select **No one. Add them later (1)** to skip assigning contributors during the initial setup, Click **Continue (2)** to proceed with the Microsoft Security Copilot workspace configuration.
+
+   ![](media/p8t1s3.7.png)
+
+1. Verify that the **You're all set** page is displayed, confirming that the Microsoft Security Copilot workspace and security capacity were created successfully, Review the **Azure resource links** section and verify the configured **Capacity name**, **Subscription**, **Resource group**, and **Location** details, Click **Finish** to open the Microsoft Security Copilot experience and complete the setup process.
+
+   ![](media/p8t1s3.8.png)
+
+1. In the Microsoft Security Copilot prompt box, enter the following prompt:
+
+    ```text
    Show me the Microsoft Purview capabilities available in this session and tell me which ones can help investigate DLP alerts and Insider Risk activity.
    ```
 
-10. Capture a screenshot of the enabled plugin state or capability response and save it to your evidence folder.
+   Submit the prompt and review the response generated by Microsoft Security Copilot.
+
+   ![](media/p8t1s3.9.png)
+
+   ![](media/p8t1s3.10.png)
 
 > [!Important]
 > This challenge assumes Security Copilot readiness and Purview plugin availability were pre-staged for the tenant. If the Purview source is missing entirely, pause and notify the facilitator before continuing.
@@ -49,8 +110,9 @@ In this task, you will sign in to the required portals and confirm that Security
 
 In this task, you will use Copilot to triage a recent DLP alert and compare the AI summary with the underlying Purview evidence.
 
-1. Return to the **Microsoft Purview portal**.
-2. In the left navigation, go to **Data Loss Prevention** > **Alerts**.
+1. In the Microsoft Purview portal, click **Solutions (1)** from the left navigation pane to open the list of available compliance and governance solutions, select **Data Loss Prevention (2)** to open the Data Loss Prevention solution and review DLP policies, alerts, incidents, and sensitive data protection activities.
+
+   ![](media/p8t2s1.png)
 3. Open one recent DLP alert related to the seeded exposure scenario.
 4. Record the alert name, severity, impacted user, and if available the alert or event identifier in your notes.
 5. Review the **Events** and **Details** panes so you understand what activity triggered the alert.
