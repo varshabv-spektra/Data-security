@@ -1,4 +1,4 @@
-# Purview Data Security Hackathon — Challenge Guide Overview
+# Purview Data Security Hackathon
 
 ### Estimated Duration: 45 Minutes (Overview) | 7 Challenges Total
 
