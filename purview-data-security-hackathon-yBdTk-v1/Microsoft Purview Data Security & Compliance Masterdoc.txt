@@ -33,7 +33,7 @@
         "Order": 7
       },
       {
-        "RawFilePath": " https://raw.githubusercontent.com/reema0814/Data-security/refs/heads/main/purview-data-security-hackathon-yBdTk-v1/LabGuidePackage/Lab%20Guide/Lab%20Guide/Exercise-07.md",
+        "RawFilePath": "https://raw.githubusercontent.com/reema0814/Data-security/refs/heads/main/purview-data-security-hackathon-yBdTk-v1/LabGuidePackage/Lab%20Guide/Lab%20Guide/Exercise-07.md",
         "Order": 8
       }
 
