@@ -36,14 +36,6 @@ https://purview.microsoft.com
       ![](media/p1i3.png)
 
 4. When prompted, complete any first-run or multifactor prompts that are already pre-staged for the lab tenant.
-5. In a separate browser tab, open the Azure portal at 
-`
-https://portal.azure.com
-`
- and confirm that your subscription context is available for this deployment:
-   - Subscription: <inject key="SubscriptionID"></inject>
-   - Tenant: <inject key="TenantID"></inject>
-6. Record your deployment reference for the challenge evidence package as **Deployment ID: <inject key="DeploymentID" enableCopy="false"></inject>**.
 
 7. In Microsoft Purview, select **Solutions (1)** from the left navigation, and then open **Data loss prevention (2)**.
 
@@ -77,11 +69,11 @@ In this task, you will create a DLP policy that protects financial data in email
 
 1. In Microsoft Purview, stay in **Data loss prevention** > **Policies**.
 
-2. Select **Create policy**.
+2. Select **+ Create policy**.
 
    ![](media/p3t2s1.png)
 
-1. On the **What info do you want to protect?** page, select **Enterprise applications & devices (1)** to create a DLP policy that protects data across Microsoft 365 workloads and endpoint devices, and then continue to the next step of the policy creation wizard.
+1. On the **What info do you want to protect?** page, select **Enterprise applications & devices** to create a DLP policy that protects data across Microsoft 365 workloads and endpoint devices, and then continue to the next step of the policy creation wizard.
 
    ![](media/p3t2s2.0.png)
 
@@ -116,7 +108,7 @@ In this task, you will create a DLP policy that protects financial data in email
 
       ![](media/p3t2s2.8.png)
 
-11. Under **Content is shared from Microsoft 365**, open the sharing scope dropdown, select **with people outside my organization (1)**, and verify that the rule will detect sensitive financial content shared externally.     
+11. Under **Content is shared from Microsoft 365**, open the sharing scope dropdown, select **with people outside my organization**, and verify that the rule will detect sensitive financial content shared externally.     
 
       ![](media/p3t2s2.9.png)
 
@@ -125,7 +117,7 @@ In this task, you will create a DLP policy that protects financial data in email
       ![](media/p3t2s2.10.png)
 
 
-13. Under **Restrict access or encrypt the content in Microsoft 365 locations**, select **Block only people outside your organization (1)** to prevent external users from accessing sensitive financial information while allowing internal users to continue accessing the content.
+13. Under **Restrict access or encrypt the content in Microsoft 365 locations**, select **Block only people outside your organization** to prevent external users from accessing sensitive financial information while allowing internal users to continue accessing the content.
 
       ![](media/p3t2s2.11.png)
 
@@ -149,7 +141,7 @@ In this task, you will create a DLP policy that protects financial data in email
 
       ![](media/p3t2s2.13.png)
 
-   18. On the **Policy mode** page, keep **Run the policy in simulation mode** selected and ensure **Show policy tips while in simulation mode** is enabled, Click **Next (2)** to review the policy configuration before creating the DLP policy.
+   18. On the **Policy mode** page, keep **Run the policy in simulation mode** selected and ensure **Show policy tips while in simulation mode** is enabled, Click **Next** to review the policy configuration before creating the DLP policy.
 
          ![](media/p3t2s2.14.png)
 
@@ -171,7 +163,7 @@ In this task, you will create a DLP policy that protects financial data in email
 
       ![](media/p3t2s2.16.png)
 
-23. On the **Policies** page, select **Hackathon - Financial DLP (1)** and review the policy details pane.
+23. On the **Policies** page, select **Hackathon - Financial DLP** and review the policy details pane.
    
       Verify that the policy includes the following locations:
 
@@ -199,7 +191,7 @@ In this task, you will expand the DLP configuration to protect collaboration mes
 
    ![](media/p3t3s1.png)
 
-2. Select the `Hackathon - Financial DLP` policy you created, and choose **Edit policy**.
+2. Select the `Hackathon - Financial DLP (1)` policy you created, and choose **Edit policy (2)**.
 
    ![](media/p3t3s2.png)
 
@@ -217,7 +209,7 @@ In this task, you will expand the DLP configuration to protect collaboration mes
 
 1. Verify that **Hackathon - Financial DLP** appears in the policy list and reflects the updated configuration.
 
-1. In the Microsoft Purview portal, select **Data Loss Prevention (1)** from the left navigation pane, select **Policies (2)** to open the DLP policies page, click **Create policy (3)** to start creating a new Data Loss Prevention policy.
+1. In the Microsoft Purview portal, select **Data Loss Prevention (1)** from the left navigation pane, select **Policies (2)** to open the DLP policies page, click **+ Create policy (3)** to start creating a new Data Loss Prevention policy.
 
    ![](media/p3t3s2.3png.png)
 
@@ -229,7 +221,7 @@ In this task, you will expand the DLP configuration to protect collaboration mes
 
    ![](media/p3t3s2.5png.png)
 
-1. In the **Name** field, enter **Financial Data Detection - Devices (1)** as the rule name, Under **Conditions**, click **Add condition (2)**, From the list of available conditions, select **Content contains (3)**.
+1. In the **Name** field, enter **Financial Data Detection - Devices (1)** as the rule name, Under **Conditions**, click **+ Add condition (2)**, From the list of available conditions, select **Content contains (3)**.
 
    ![](media/p3t3s2.6.png)
 
@@ -241,7 +233,7 @@ In this task, you will expand the DLP configuration to protect collaboration mes
 
    ![](media/p3t3s2.8.png)
 
-1. Under **Actions**, click **Add action (1)**, From the dropdown menu, select **Audit or restrict activities on devices (2)** to configure device-based protection actions for detected sensitive information.
+1. Under **Actions**, click **+ Add an action (1)**, From the dropdown menu, select **Audit or restrict activities on devices (2)** to configure device-based protection actions for detected sensitive information.
 
    ![](media/p3t3s2.9.png)
 
@@ -281,8 +273,6 @@ In this task, you will expand the DLP configuration to protect collaboration mes
 In this task, you will review the telemetry and reporting views that show whether DLP is detecting and acting on risky activity.
 
 1. In Microsoft Purview, return to **Data loss prevention**.
-
-   ![](media/p3t4s1.png)
 
    ![](media/p3t4s1.0.png)
    
