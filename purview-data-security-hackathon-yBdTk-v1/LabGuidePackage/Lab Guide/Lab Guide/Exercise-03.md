@@ -36,15 +36,6 @@ https://purview.microsoft.com
 
       ![](media/p1i3.png)
 
-4. When prompted, complete any first-run or multifactor prompts that are already pre-staged for the lab tenant.
-5. In a separate browser tab, open the Azure portal at 
-`
-https://portal.azure.com
-`
- and confirm that your subscription context is available for this deployment:
-   - Subscription: <inject key="SubscriptionID"></inject>
-   - Tenant: <inject key="TenantID"></inject>
-
 6. In the Microsoft Purview portal, select **Solutions (1)** and open **Insider Risk Management (2)**.
 
    ![](media/p4t1s6.png)
@@ -56,8 +47,7 @@ https://portal.azure.com
    - **Reports > Cases (4)**
 
       ![](media/p4t1s7.png)
-      
-8. If your tenant presents setup banners, recommendations, or prerequisite notices instead of a fully active dashboard, document them in your challenge notes. For this hackathon, some readiness items may be pre-staged by the facilitator.
+
 9. Open **Policies** and review whether any existing Insider Risk Management policies are present. If no policies exist, continue to Task 2 and create a new policy.
 
 10. Open **Alerts** and review whether any alerts are available for triage. If no alerts are present, document that no pre-staged alerts were available in the tenant and continue with the challenge.
@@ -74,7 +64,7 @@ In this task, you will validate an existing exfiltration-focused policy or creat
 
 1. In **Insider Risk Management**, select **Policies**.
 
-1. On the **Policies** page, click **Create policy (1)**, From the dropdown menu, select **Custom policy (2)** to create a new Insider Risk Management policy from scratch.
+1. On the **Policies** page, click **+ Create policy (1)**, From the dropdown menu, select **Custom policy (2)** to create a new Insider Risk Management policy from scratch.
 
    ![](media/p4t2s4.png)
 
