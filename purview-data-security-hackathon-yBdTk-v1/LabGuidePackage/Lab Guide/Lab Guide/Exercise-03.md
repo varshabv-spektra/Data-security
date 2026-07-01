@@ -1,4 +1,4 @@
-# Exercise 03: Challenge 3 — Insider Risk Management & Data Security Investigations
+# Challenge 3 — Insider Risk Management & Data Security Investigations
 
 ### Estimated Duration: 1 Hour 15 Minutes
 
